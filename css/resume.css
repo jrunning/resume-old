@@ -1,9 +1,6 @@
-body * {
+body {
   font-weight: normal;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
-}
-
-body {
   width: 100%;
   height: 100%;
   margin: 1.5em 0;
@@ -28,6 +25,30 @@ a {
 
 a:hover {
   border-bottom: 1px solid #9a9;
+}
+
+.ribbon {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=2)";
+  filter: alpha(opacity=2);
+  -moz-opacity: 0.2;
+  -khtml-opacity: 0.2;
+  opacity: 0.2;
+}
+
+.ribbon:hover {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
+  -moz-opacity: 0.9;
+  -khtml-opacity: 0.9;
+  opacity: 0.9;
+}
+
+a.ribbon {
+  border-bottom-style: none;
+}
+
+a.ribbon:hover {
+  border-bottom-style: none;
 }
 
 #top, #bottom {  

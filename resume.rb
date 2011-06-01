@@ -163,7 +163,8 @@ __END__
     <title><%= details['name'] %> - <%= details['email'] %> - Resume</title>
     <link href="http://fonts.googleapis.com/css?family=Shanti:regular"
       rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="css/lib/reset.css" type="text/css" />
+    <link rel="stylesheet" href="css/lib/ribbon.css" type="text/css" />
     <link rel="stylesheet" href="css/resume.css" type="text/css" />
     <link rel="profile" href="http://microformats.org/profile/hcard">
     <link rel="me" type="text/html"
@@ -258,5 +259,9 @@ __END__
         <span class="phone"><%= details['phone'] %></span>
       </p>
     </section>
+    <a id="myribbon" href="http://github.com/jrunning/Resume"
+      class="gray ribbon right top" target="_blank">
+      <span class="text">Fork me on GitHub</span>
+    </a>
   </body>
 </html>
