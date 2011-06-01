@@ -28,11 +28,11 @@ a:hover {
 }
 
 .ribbon {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=2)";
-  filter: alpha(opacity=2);
-  -moz-opacity: 0.2;
-  -khtml-opacity: 0.2;
-  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
+  filter: alpha(opacity=25);
+  -moz-opacity: 0.25;
+  -khtml-opacity: 0.25;
+  opacity: 0.25;
 }
 
 .ribbon:hover {
