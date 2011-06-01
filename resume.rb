@@ -154,6 +154,7 @@ resume = ResumeRenderer.new jordan_running
 resume.to_html DATA.read
 
 # TEMPLATE:
+# TODO Add hResume microformat: http://microformats.org/wiki/hresume
 __END__
 <!DOCTYPE html>
 <html>
