@@ -257,11 +257,15 @@
 @media print {
   body {
     background-color: white !important;
-    padding: .5in 1in .5in 1in;
+    padding: .25in 1in .25in 1in;
   }
 
   .ribbon {
     display: none;
+  }
+
+  section {
+    page-break-inside: avoid !important;
   }
 
   section > ul > li {
