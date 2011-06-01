@@ -90,8 +90,6 @@ jordan_running = %{
       programming, virtual machines, and declarative languages)
   
   web:
-  - title:      @swirlee on Twitter
-    url:        http://twitter.com/swirlee
   - title:      jrunning on GitHub
     url:        http://github.com/jrunning
   - title:      JordanRunning.com
@@ -103,8 +101,8 @@ jordan_running = %{
 
   interests: [  geolocation, mobile computing,
                 web standards (current and emerging),
-                microformats, machine vision, typography and design,
-                blogging and new media, open source, photography, art
+                microformats, typography and design, blogging and new media,
+                web curation, open source, Vim, photography, art, baking
              ]
 }
 
