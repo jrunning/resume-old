@@ -211,7 +211,7 @@ __END__
           </ul>
         <% end %>
         </li>
-      <% end # job %>
+      <% end %>
       </ul>
     </section>
     
