@@ -79,6 +79,7 @@ a.ribbon:hover {
   padding: .5em;
   padding-top: 0;
   font-size: 1.2em;
+  font-weight: normal;
 }
 
 #top p, #bottom {
