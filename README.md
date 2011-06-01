@@ -1,14 +1,11 @@
 Usage
-=====
+-----
 
-Mac OS X
---------
+### Mac OS X
     $ ./resume.rb > index.html && open index.html
 
-Windows
--------
+### Windows
     > ruby resume.rb > index.html && start index.html
 
-Ubuntu Linux
-------------
+### Ubuntu Linux
     $ ./resume.rb > index.html && gnome-open index.html
