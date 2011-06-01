@@ -6,6 +6,7 @@ body {
   margin: 1.5em 0;
   margin-top: 1em;
   background-color: #efe;
+  overflow-x: hidden;
 }
 
 .clearfix:after {
