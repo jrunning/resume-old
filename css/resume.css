@@ -1,0 +1,231 @@
+body * {
+  font-weight: normal;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 1.5em 0;
+  margin-top: 1em;
+  background-color: #efe;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 1px dotted;
+  color: inherit;
+  font-weight: inherit;
+}
+
+a:hover {
+  border-bottom: 1px solid #9a9;
+}
+
+#top, #bottom {  
+  width: 654px;
+  margin: auto;
+  background-color: #d8f0d8;  
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-right: 1px solid #d4e4d0;
+  border-bottom: 1px solid #d4e4d0;
+  clear: both;
+}
+
+#top header {
+  float: left;
+  width: 67%;
+}
+
+#top h1 {
+  padding: .3em;
+  padding-bottom: 0;
+  padding-top: .15em;
+  font-size: 2em;
+}
+
+#top h2 {
+  padding: .5em;
+  padding-top: 0;
+  font-size: 1.2em;
+}
+
+#top p, #bottom {
+  font-size: 83%;
+  text-transform: uppercase;
+  line-height: 1.67em;
+  padding-right: .75em;
+}
+
+#top p {
+  padding-top: 1.5em;
+  float: right;
+  text-align: right;
+}
+
+#top p span {
+  display: block;
+}
+
+#top p a, #bottom a {
+  border-color: #bcb;
+}
+
+li {
+  margin-left: 2em;
+}
+
+section {
+  width: 624px;
+  margin: 0 auto;
+}
+
+section h2 {
+  padding: .5em .1em;
+  padding-bottom: .3em;
+  font-size: 1.67em;
+}
+
+section h3 {
+  color: #282828;
+  font-weight: bold;
+}
+
+section h3 a {
+  border-color: #bcb;
+}
+
+section > ul {
+  list-style-type: none;
+}
+
+section > ul > li, #interests p, #web ul {
+  margin: 0;
+  margin-bottom: .67em;
+  background-color: #e4f4e4;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-right: 1px solid #d4e4d4;
+  border-bottom: 1px solid #d4e4d4;
+}
+
+#interests p {
+  padding: .5em;
+}
+
+section .bullet-points {
+  padding-top: .5em;
+  padding-right: 1em;
+  border-top: 1px solid white;
+  list-style-type: disc;
+}
+
+section .bullet-points li, p {
+  padding-bottom: .5em;
+  line-height: 120%;
+}
+
+#web ul {
+  margin: 0;
+  padding-top: .45em;
+  padding-bottom: .33em;
+}
+
+#web li {
+  border: none;
+  display: block;
+  float: left;
+  width: 44%;
+  margin: .1em;
+  margin-left: 1.5em;
+}
+
+#web li:before {
+  content: "\2022";
+  font-size: x-large;
+  margin-right: .4em;
+  vertical-align: middle;
+}
+
+#web a {
+  border-color: #bcb;
+}
+
+section header {
+  padding: .5em;
+  border-bottom: 1px solid #d4e4d4;
+}
+
+#top header {
+  border-bottom: none;
+}
+
+section header p {
+  padding-bottom: 0;
+}
+
+section .short {
+  margin-bottom: .4em;
+  font-size: 88%;
+}
+
+section header * {
+  background-color: transparent;
+  
+}
+
+section header .dates {
+  float: right;
+}
+
+h1, h2, h3 {
+  font-family: "Shanti", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin-bottom: .25em;
+  width: 67%;
+}
+h3 span {
+  padding-left: .5em;
+  font-size: .65em;
+  font-variant: small-caps;
+}
+h4 span {
+  font-size: .75em;
+}
+
+#bottom {
+  margin-top: 1.5em;
+  margin-bottom: 0;
+}
+
+#bottom p {
+  width: 100%;
+  float: left;
+  margin: 0;
+  padding: .67em;
+  vertical-align: middle;
+}
+
+#bottom .locality {
+  padding-left: 14%;
+}
+
+#bottom .phone {
+  padding-right: .67em;
+  display: block;
+  float: right;
+}
