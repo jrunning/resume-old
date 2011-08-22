@@ -4,7 +4,7 @@ jordan_running = %{
   details:
     name:     Jordan Running
     email:    jr@jordanrunning.com
-    phone:    (920) 737-9440
+    phone:    (925) 567-3267
     location: Iowa City, Iowa
     tagline:  Web application developer specializing in Ruby on Rails
               and JavaScript
