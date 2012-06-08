@@ -8,32 +8,56 @@ jordan_running = %{
     location: Iowa City, Iowa
     tagline:  Web application developer specializing in Ruby on Rails
               and JavaScript
-  
+
   experience:
   - company:  Independent Contractor
     position: Web Application Developer
     dates:    [ Oct 2010, Present ]
     bullet-points:
+    - Architected and implemented a complex registration wizard for merchant
+      services customers for a client of [Tag Creative Studio][1]. As the sole
+      back-end developer, built the Ruby on Rails- and MySQL-backed five-step
+      workflow with more than 70 fields and strict, interdependent validations
+      for each.
+
+    - Implemented a Node.js application for initializing, managing and
+      communicating with instances of other Node.js applications as requested by
+      remote clients. The application is modular, allowing new types of
+      application instances to be supported while maintaining strict separation
+      between components.
+
     - Developed a web frontend and Node.js backend for a Redis-backed
-      English-Spanish translation database for [Componica, LLC][1]
-    - Designed and prototyped a social networking and live chat
-      system in Ruby on Rails, backed by MySQL and Redis
+      English-Spanish translation database for [Componica, LLC][2].
+
+    - Designed and prototyped a social networking and live chat system in Ruby
+      on Rails, backed by MySQL and Redis. The product users to be "paired"
+      according to several attributes, for which Redis' fast set operations were
+      an excellent match.
+
     links:
-      1: http://componica.com/
+      1: http://tagcreativestudio.com/
+      2: http://componica.com/
 
   - company:  Cramer Development
     url:      http://cramerdev.com/
     position: Web Application Developer
     dates:    [ Jul 2009, Sept 2010 ]
     bullet-points:
-    - Developed and maintained large web applications in Ruby on Rails and
-      object-oriented PHP
-    - Designed and implemented a Ruby client for a complex third-party API
+    - Developed and maintained large, public-facing web applications and
+      e-commerce sites in Ruby on Rails and object-oriented PHP.
+
+    - Designed and implemented a Ruby client for a complex third-party API which
+      gathered search engine data for [DIYSEO.com][1].
+
     - Profiled and optimized complex queries on databases with tens of millions
-      of records
+      of records.
+
     - Worked directly with clients for whom an hour's downtime equaled
-      thousands of dollars in lost revenue
-  
+      thousands of dollars in lost revenue.
+
+    links:
+      1: http://diyseo.com/
+
   - company:  Digital Artefacts
     url:      http://digitalartefacts.com/
     position: Software Developer
@@ -42,7 +66,15 @@ jordan_running = %{
     - Designed and implemented a system for uploading and manipulating
       (cropping, rotating) images, initially in Flash with a PHP backend, then
       again in JavaScript and ASP.NET/C#.
-    
+
+  other-experience:
+  - company:  Busy Coworking
+    url:      http://busycoworking.com/
+    position: Cofounder
+    bullet-points:
+    - Opened Iowa City's first and only coworking space, now flourishing at
+      218 E. Washington St. downtown.
+
   - company:  Tucows
     url:      http://tucows.com/
     position: Tutorial Writer, Screencaster
@@ -50,10 +82,11 @@ jordan_running = %{
     bullet-points:
     - Wrote, recorded, and produced 26 short form how-to screencasts (ex. [1],
       [2], [3], [4]) for Tucows' [Butterscotch.com][5] in one month on
-      accomplishing common and time-saving tasks on Windows and the web
+      accomplishing common and time-saving tasks on Windows and the web.
     - Wrote dozens of [instructional articles][6] on using software and
       understanding computing concepts, from backing up browser settings
-      to making time-lapse movies
+      to making time-lapse movies.
+
     links:
       1: http://butterscotch.com/tutorial/How-To-Manage-The-Windows-Vista-Firewall
       2: http://butterscotch.com/tutorial/How-To-Defrag-Your-Hard-Drive-In-Windows-Vista
@@ -61,7 +94,7 @@ jordan_running = %{
       4: http://butterscotch.com/tutorial/Using-Windows-Defender-To-Get-Rid-Of-Spyware
       5: http://butterscotch.com/
       6: http://www.tucows.com/articles/author/jrunning
-    
+
   - company:  Weblogs, Inc. / AOL
     url:      http://weblogsinc.com/
     position: Lead Blogger
@@ -74,10 +107,11 @@ jordan_running = %{
       software and web applications
     - Contributed extensively to internal documentation and technical
       discussions
+
     links:
       1: http://downloadsquad.com/
       2: http://downloadsquad.com/bloggers/jordan-running
-  
+
   education:
   - institution:  Cornell College
     url:          http://cornellcollege.edu/
@@ -88,21 +122,19 @@ jordan_running = %{
       Coursework including software design, systems software, data management
       systems, and progamming language concepts (including functional
       programming, virtual machines, and declarative languages)
-  
+
   web:
   - title:      jrunning on GitHub
     url:        http://github.com/jrunning
-  - title:      JordanRunning.com
-    url:        http://jordanrunning.com/
   - title:      LinkedIn
     url:        http://linkedin.com/in/jordanrunning
   - title:      Stack Overflow
     url:        http://careers.stackoverflow.com/jordan
 
-  interests: [  geolocation, mobile computing,
-                web standards (current and emerging),
-                microformats, typography and design, blogging and new media,
-                web curation, open source, Vim, photography, art, baking
+  interests: [  mobile computing, web standards (current and emerging) and
+                microformats, typography and design, web curation, blogs and new
+                media, nontraditional modes of working, open source, Vim,
+                photography, art, baking
              ]
 }
 
