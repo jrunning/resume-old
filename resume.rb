@@ -12,7 +12,7 @@ class ResumeRenderer
   end
 
   def to_html template=nil
-    ERB.new( template || @template ).run binding
+    ERB.new( template || @template ).result binding
   end
 
   private
@@ -46,7 +46,12 @@ class ResumeRenderer
 end
 
 resume = ResumeRenderer.new DATA.read
-puts resume.to_html
+
+if ARGV.empty? || ARGV.first == '-'
+  $stdout
+else
+  File.open( ARGV.shift, 'w' )
+end << resume.to_html
 
 __END__
 --- %YAML:1.0  # DATA
@@ -69,11 +74,11 @@ experience:
     workflow with more than 70 fields and strict, interdependent validations
     for each.
 
-  - Implemented a Node.js application for initializing, managing and
-    communicating with instances of other Node.js applications as requested by
-    remote clients. The application is modular, allowing new types of
-    application instances to be supported while maintaining strict separation
-    between components.
+  - Implemented from precise specification a Node.js application for
+      initializing, managing and communicating with instances of other Node.js
+      applications as requested by remote clients. The application is modular,
+      allowing new types of application instances to be supported while
+      maintaining strict separation between components.
 
   - Developed a web frontend and Node.js backend for a Redis-backed
     English-Spanish translation database for [Componica, LLC][2].
