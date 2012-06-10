@@ -16,32 +16,32 @@ class ResumeRenderer
   end
 
   private
-    def format_dates(format, dates)
-      dates.map { |date|
+    def format_dates format, dates
+      dates.map do |date|
         case date
           when 'Present' then date
           else Date.parse(date).strftime format
         end
-      }.join '&ndash;'
+      end.join '&ndash;'
     end
 
     # Replace [Markdown-style links][1] with HTML links (naive!)
-    def l(text, links)
+    def l text, links
       if links
-        text.gsub!(/\[([^\]+]*)\]\[([0-9])\]/, '<a href="%\2%">\1</a>')
-        text.gsub!(/\[([0-9])\]/, '<a href="%\1%">\1</a>')
-        links.each {|key, url| text.gsub!("%#{key}%", url) }
+        text.gsub! /\[([^\]+]*)\]\[([0-9])\]/,  '<a href="%\2%">\1</a>'
+        text.gsub! /\[([0-9])\]/,               '<a href="%\1%">\1</a>'
+        links.each {|key, url| text.gsub! "%#{key}%", url }
       end
 
       text
     end
 
     def method_missing meth
-      @content[meth.id2name] || super
+      @content[ meth.id2name ] || super
     end
 
     def respond_to? meth
-      !@content[meth.id2name].nil? || super
+      !@content[ meth.id2name ].nil? || super
     end
 end
 
