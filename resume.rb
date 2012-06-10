@@ -230,14 +230,17 @@ TEMPLATE: |- # TODO Add hResume microformat: http://microformats.org/wiki/hresum
         </p>
       </section>
 
-      <section id="experience">
-        <h2>Experience</h2>
+    <% [ 'experience', 'other experience' ].each do |experience| %>
+      <section id="<%= experience.gsub ' ', '-' %> ">
+        <h2><%= experience.capitalize %></h2>
 
         <ul>
-        <% experience.each do |job| %>
+        <% send( experience ).each do |job| %>
           <li>
             <header>
+            <% if job['dates'] %>
               <p class="dates"><%= format_dates('%B %Y', job['dates']) %></p>
+            <% end %>
               <h3><% if job['url'] %>
                 <a href="<%= job['url'] %>" target="_blank">
                 <%= job['company'] %></a>
@@ -262,6 +265,7 @@ TEMPLATE: |- # TODO Add hResume microformat: http://microformats.org/wiki/hresum
         <% end %>
         </ul>
       </section>
+    <% end %>
 
       <section id="education">
         <h2>Education</h2>
