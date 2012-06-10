@@ -125,6 +125,7 @@ other experience:
 - company:  Busy Coworking
   url:      http://busycoworking.com/
   position: Cofounder
+  dates:    [ Apr 2012, Present ]
   bullet points:
   - Opened Iowa City's first and only coworking space, now flourishing at
     218 E. Washington St. downtown.
@@ -195,27 +196,15 @@ TEMPLATE: |- # TODO Add hResume microformat: http://microformats.org/wiki/hresum
   <!DOCTYPE html>
   <html>
     <head>
-      <title><%= details['name'] %> - <%= details['email'] %> - Resume</title>
-      <link href="http://fonts.googleapis.com/css?family=Shanti:regular"
-        rel="stylesheet" type="text/css" />
-      <link rel="stylesheet" href="css/lib/reset.css" type="text/css" />
-      <link rel="stylesheet" href="css/lib/ribbon.css" type="text/css" />
-      <link rel="stylesheet" href="css/resume.css" type="text/css" />
+      <title><%= details['name'] %> &emdash; <%= details['email'] %> &emdash; Resume</title>
+      <link rel="stylesheet"
+        href="http://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,900italic">
+      <link rel="stylesheet" href="css/lib/reset.css">
+      <link rel="stylesheet" href="css/lib/ribbon.css">
+      <link rel="stylesheet" href="css/resume.css">
       <link rel="profile" href="http://microformats.org/profile/hcard">
       <link rel="me" type="text/html"
-        href="http://www.google.com/profiles/jrunning"/>
-
-      <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-23720675-1']);
-        _gaq.push(['_trackPageview']);
-
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-      </script>
+        href="http://www.google.com/profiles/jrunning">
     </head>
     <body class="vcard">
       <section id="top" class="clearfix adr">
@@ -226,12 +215,12 @@ TEMPLATE: |- # TODO Add hResume microformat: http://microformats.org/wiki/hresum
         <p><a href="mailto:<%= details['email'] %>" class="email">
             <%= details['email'] %>
           </a>
-          <span class="tel">(920) 737-9440</span>
+          <a class="tel" href="tel:+1<%= details['phone'].gsub /[^0-9]/, '' %>"><%= details['phone'] %></a>
         </p>
       </section>
 
     <% [ 'experience', 'other experience' ].each do |experience| %>
-      <section id="<%= experience.gsub ' ', '-' %> ">
+      <section id="<%= experience.gsub ' ', '-' %>">
         <h2><%= experience.capitalize %></h2>
 
         <ul>
@@ -274,7 +263,7 @@ TEMPLATE: |- # TODO Add hResume microformat: http://microformats.org/wiki/hresum
         <% education.each do |school| %>
           <li>
             <header>
-              <p><span class="dates"><%= school['years'].join '&ndash;' %></p>
+              <p><span class="dates"><%= school['years'].join '&#8202;&ndash;&#8202;' %></p>
               <h3><a href="<%= school['url'] %>" target="_blank">
                   <%= school['institution'] %></a>
                 <span><%= school['location'] %></span>
@@ -288,7 +277,7 @@ TEMPLATE: |- # TODO Add hResume microformat: http://microformats.org/wiki/hresum
       </section>
 
       <section id="web">
-        <h2>On the Web</h2>
+        <h2>On the web</h2>
 
         <ul class="clearfix">
         <% web.each do |site| %>
@@ -305,14 +294,56 @@ TEMPLATE: |- # TODO Add hResume microformat: http://microformats.org/wiki/hresum
       </section>
 
       <section id="bottom" class="clearfix adr">
-        <p><a href="mailto:<%= details['email'] %>"><%= details['email'] %></a>
-          <span class="locality"><%= details['location'] %></span>
-          <span class="phone"><%= details['phone'] %></span>
-        </p>
+        <a class="email" href="mailto:<%= details['email'] %>"><%= details['email'] %></a>
+        <a class="phone" href="tel:+1<%= details['phone'].gsub /[^0-9]/, '' %>"><%= details['phone'] %></a>
+        <span class="locality"><%= details['location'] %></span>
       </section>
       <a id="myribbon" href="http://github.com/jrunning/Resume"
         class="gray ribbon right top" target="_blank">
         <span class="text">Fork me on GitHub</span>
       </a>
+
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-23720675-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+        // Shenanigans
+        var els, numEls, incr, ribbonColor, i = 0
+        , currentColor = [ 22,  4, 18 ], endColor = [  0, 24, 10 ]
+        ;
+
+        if( document.querySelectorAll ) {
+          ribbonColor = document.querySelector('.ribbon').style.color;
+          els = document.querySelectorAll( '*:not(.ribbon)' );
+          if( els.length ) {
+            el = els[i];
+            while( el.tagName != 'BODY' ) { el = els[ ++i ]; }
+            numEls = els.length - i;
+
+            incr  = [ ( endColor[0] - currentColor[0] ) / numEls
+                    , ( endColor[1] - currentColor[1] ) / numEls
+                    , ( endColor[2] - currentColor[2] ) / numEls
+                    ];
+
+            for(; i < els.length; i++ ) {
+              els[i].style.color = "rgb(" +
+                ( currentColor[0] += incr[0] ) + "%," +
+                ( currentColor[1] += incr[1] ) + "%," +
+                ( currentColor[2] += incr[2] ) + "%)"
+              ;
+            }
+
+            // kludge
+            document.querySelector( "#myribbon *" ).style.color = ribbonColor;
+          }
+        }
+      </script>
     </body>
   </html>

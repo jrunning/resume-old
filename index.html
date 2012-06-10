@@ -9,19 +9,7 @@
     <link rel="stylesheet" href="css/resume.css" type="text/css" />
     <link rel="profile" href="http://microformats.org/profile/hcard">
     <link rel="me" type="text/html"
-      href="http://www.google.com/profiles/jrunning"/>
-
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-23720675-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
+      href="http://www.google.com/profiles/jrunning">
   </head>
   <body class="vcard">
     <section id="top" class="clearfix adr">
@@ -32,12 +20,12 @@
       <p><a href="mailto:jr@jordanrunning.com" class="email">
           jr@jordanrunning.com
         </a>
-        <span class="tel">(925) 567-3267</span>
+        <a class="tel" href="tel:+19255673267">(925) 567-3267</a>
       </p>
     </section>
 
   
-    <section id="experience ">
+    <section id="experience">
       <h2>Experience</h2>
 
       <ul>
@@ -125,13 +113,15 @@
       </ul>
     </section>
   
-    <section id="other-experience ">
+    <section id="other-experience">
       <h2>Other experience</h2>
 
       <ul>
       
         <li>
           <header>
+          
+            <p class="dates">April 2012&ndash;Present</p>
           
             <h3>
               <a href="http://busycoworking.com/" target="_blank">
@@ -214,7 +204,7 @@
       
         <li>
           <header>
-            <p><span class="dates">2000&ndash;2005</p>
+            <p><span class="dates">2000&#8202;&ndash;&#8202;2005</p>
             <h3><a href="http://cornellcollege.edu/" target="_blank">
                 Cornell College</a>
               <span>Mt. Vernon, Iowa</span>
@@ -228,7 +218,7 @@
     </section>
 
     <section id="web">
-      <h2>On the Web</h2>
+      <h2>On the web</h2>
 
       <ul class="clearfix">
       
@@ -253,14 +243,56 @@
     </section>
 
     <section id="bottom" class="clearfix adr">
-      <p><a href="mailto:jr@jordanrunning.com">jr@jordanrunning.com</a>
-        <span class="locality">Iowa City, Iowa</span>
-        <span class="phone">(925) 567-3267</span>
-      </p>
+      <a class="email" href="mailto:jr@jordanrunning.com">jr@jordanrunning.com</a>
+      <a class="phone" href="tel:+19255673267">(925) 567-3267</a>
+      <span class="locality">Iowa City, Iowa</span>
     </section>
     <a id="myribbon" href="http://github.com/jrunning/Resume"
       class="gray ribbon right top" target="_blank">
       <span class="text">Fork me on GitHub</span>
     </a>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-23720675-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      // Shenanigans
+      var els, numEls, incr, ribbonColor, i = 0
+      , currentColor = [ 22,  4, 18 ], endColor = [  0, 24, 10 ]
+      ;
+
+      if( document.querySelectorAll ) {
+        ribbonColor = document.querySelector('.ribbon').style.color;
+        els = document.querySelectorAll( '*:not(.ribbon)' );
+        if( els.length ) {
+          el = els[i];
+          while( el.tagName != 'BODY' ) { el = els[ ++i ]; }
+          numEls = els.length - i;
+
+          incr  = [ ( endColor[0] - currentColor[0] ) / numEls
+                  , ( endColor[1] - currentColor[1] ) / numEls
+                  , ( endColor[2] - currentColor[2] ) / numEls
+                  ];
+
+          for(; i < els.length; i++ ) {
+            els[i].style.color = "rgb(" +
+              ( currentColor[0] += incr[0] ) + "%," +
+              ( currentColor[1] += incr[1] ) + "%," +
+              ( currentColor[2] += incr[2] ) + "%)"
+            ;
+          }
+
+          // kludge
+          document.querySelector( "#myribbon *" ).style.color = ribbonColor;
+        }
+      }
+    </script>
   </body>
 </html>
