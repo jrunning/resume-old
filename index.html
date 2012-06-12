@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jordan Running - jr@jordanrunning.com - Resume</title>
-    <link href="http://fonts.googleapis.com/css?family=Shanti:regular"
-      rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="css/lib/reset.css" type="text/css" />
-    <link rel="stylesheet" href="css/lib/ribbon.css" type="text/css" />
-    <link rel="stylesheet" href="css/resume.css" type="text/css" />
+    <title>Jordan Running &mdash; jr@jordanrunning.com &mdash; Resume</title>
+  
+    <link rel="stylesheet"
+      href="http://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,900italic">
+    <link rel="stylesheet" href="css/resume.css">
     <link rel="profile" href="http://microformats.org/profile/hcard">
     <link rel="me" type="text/html"
       href="http://www.google.com/profiles/jrunning">
@@ -247,10 +246,12 @@
       <a class="phone" href="tel:+19255673267">(925) 567-3267</a>
       <span class="locality">Iowa City, Iowa</span>
     </section>
+  
     <a id="myribbon" href="http://github.com/jrunning/Resume"
       class="gray ribbon right top" target="_blank">
       <span class="text">Fork me on GitHub</span>
     </a>
+  
 
     <script type="text/javascript">
       var _gaq = _gaq || [];
@@ -264,12 +265,15 @@
       })();
 
       // Shenanigans
-      var els, numEls, incr, ribbonColor, i = 0
+      var els, numEls, incr, ribbon, ribbonColor, i = 0
       , currentColor = [ 22,  4, 18 ], endColor = [  0, 24, 10 ]
       ;
 
       if( document.querySelectorAll ) {
-        ribbonColor = document.querySelector('.ribbon').style.color;
+        if( ribbon = document.querySelector( '.ribbon' ) ) {
+          ribbonColor = ribbon.style.color;
+        }
+
         els = document.querySelectorAll( '*:not(.ribbon)' );
         if( els.length ) {
           el = els[i];
@@ -290,7 +294,9 @@
           }
 
           // kludge
-          document.querySelector( "#myribbon *" ).style.color = ribbonColor;
+          if( ribbon ) {
+            document.querySelector( "#myribbon *" ).style.color = ribbonColor;
+          }
         }
       }
     </script>

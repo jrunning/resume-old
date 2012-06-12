@@ -65,11 +65,13 @@
     text-decoration: underline;
   }
 
-  #top, #bottom {  
+  #top, #bottom, body > footer {  
     width: 654px;
     margin: auto;
     clear: both;
   }
+
+  body > footer { display: none; }
 
   #top header {
     float: left;
@@ -173,6 +175,11 @@
     font-style: normal;
   }
 
+  #web a:hover {
+    text-decoration: none;
+    border-bottom-style: solid;
+  }
+
   section header p {
     font-style: italic;
     font-weight: lighter;
@@ -221,12 +228,34 @@
 }
 
 @media print {
-  body    { padding: .5in 1in .5in 1in; }
+  body    { padding: .75in 1in .75in 1in; }
   .ribbon { display: none; }
-  section { page-break-inside: avoid !important; }
-  section > ul > li { page-break-inside: avoid; }
+  section > ul > li, section header { page-break-inside: avoid; }
+  section header, h1, h2, h3 { page-break-after: avoid !important; }
   a {
     font-weight:  inherit;
     font-style:   inherit;
+  }
+
+  #web a { border-bottom-width: 0; }
+  #web a:after {
+    content: attr(href);
+    display: block;
+    float: left;
+    clear: left;
+    font-size: 75%;
+    line-height: 1em;
+  }
+  .email { letter-spacing: normal;}
+
+  body > footer {
+    display:      block;
+    text-align:   center;
+    font-size:    11pt;
+    position:     absolute;
+    bottom:       0;
+    height:       1.2em;
+    vertical-align:   middle;
+    -webkit-opacity:  .67;
   }
 }
