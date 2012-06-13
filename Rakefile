@@ -9,11 +9,7 @@ rescue LoadError
 end
 
 desc "Deploy with Vlad after optionally pushing to origin/master"
-task :deploy do
-  STDOUT.print "Git push to origin/master first? "
-  sh "git push origin master" if STDIN.gets =~ /^y/i
-end
-task :deploy  => "vlad:update"
+task :deploy  => [ :maybe_push_to_origin, 'vlad:update' ]
 
 desc "Generate HTML, minify assets and package in ./public"
 task :default => "public/index.html"
@@ -25,6 +21,11 @@ desc "Generate HTML by invoking resume.rb"
 task :render  => "resume.rb" do
   desc "Invoke resume.rb to regenerate the HTML"
   sh "./resume.rb index.html"
+end
+
+task :maybe_push_to_origin do
+  STDOUT.print "Git push to origin/master first? "
+  sh "git push origin master" if STDIN.gets =~ /^y/i
 end
 
 file "index.html" => :render
