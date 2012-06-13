@@ -1,3 +1,4 @@
+ENV['RESUME_ENV'] = 'production'
 PdfPath = "public/Jordan_Running_Resume_2012-06-11.pdf"
 
 begin
@@ -7,12 +8,11 @@ rescue LoadError
   # do nothing
 end
 
-desc "Regenerate the site, optionally push to master and deploy"
+desc "Deploy with Vlad after optionally pushing to origin/master"
 task :deploy do
   STDOUT.print "Git push to origin/master first? "
   sh "git push origin master" if STDIN.gets =~ /^y/i
 end
-task :deploy  => "public/index.html"
 task :deploy  => "vlad:update"
 
 desc "Generate HTML, minify assets and package in ./public"
@@ -29,7 +29,6 @@ end
 
 file "index.html" => :render
 
-file "public/index.html" do ENV['RESUME_ENV'] ||= 'production' end
 file "public/index.html" => [ "index.html", "public/css/resume.css" ] do
   desc "Minify and concatenate HTML and inline CSS and JavaScript"
   sh "htmlcompressor -o public --remove-quotes --remove-intertag-spaces \
